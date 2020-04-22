@@ -13,6 +13,66 @@ Ext.define('MyApp.view.main.ListTree', {
     width: 350,
     useArrows: true,
     rootVisible: true,
+
+    tbar: [{
+        xtype: 'button',
+        text: 'Create folder',
+        handler: function () {
+            var selection = tree.getSelection()
+            if (selection.length > 0) {
+                var activeNode = tree.getSelection()[0]
+                if (activeNode.data.leaf) {
+                    console.log("Can't create folder inside file")
+                } else {
+                    activeNode.appendChild({
+                        name: "Folder_" + Math.random().toString(36).substring(7),
+                        leaf: false
+                    });
+                }
+            } else {
+                var root = tree.getRootNode();
+                root.appendChild({
+                    name: "Folder_" + Math.random().toString(36).substring(7),
+                    leaf: false
+                });
+            }
+        }
+    }, {
+        xtype: 'button',
+        text: 'Create file',
+        handler: function () {
+            var selection = tree.getSelection()
+            if (selection.length > 0) {
+                var activeNode = tree.getSelection()[0]
+                if (activeNode.data.leaf) {
+                    console.log("Can't create file inside file")
+                } else {
+                    activeNode.appendChild({
+                        name: "File_" + Math.random().toString(36).substring(7),
+                        size: Math.floor(Math.random() * Math.floor(1000)),
+                        leaf: true
+                    });
+                }
+            } else {
+                console.log("nothing selected")
+            }
+
+        }
+    }, {
+        xtype: 'button',
+        text: 'Delete',
+        handler: function () {
+            var activeNode = tree.getSelection()[0]
+            activeNode.childNodes.forEach(function (item) {
+                store.remove(item)
+                // it would be fine to make a recursion here to delete all child nodes
+                // ... but I don't know how to do a function inside extjs fiddle :)
+            });
+            store.remove(tree.getSelection())
+
+        }
+    }],
+
     root: {
         children: [{
             text: 'Root 1',
