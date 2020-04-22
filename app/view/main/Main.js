@@ -13,9 +13,9 @@ Ext.define('MyApp.view.main.Main', {
         'Ext.plugin.Viewport',
         'Ext.window.MessageBox',
 
-        'MyApp.view.main.MainController',
-        'MyApp.view.main.MainModel',
-        'MyApp.view.main.List',
+        // 'MyApp.view.main.MainController',
+        // 'MyApp.view.main.MainModel',
+        // 'MyApp.view.main.List',
         'MyApp.view.main.ListTree'
     ],
 
@@ -75,20 +75,22 @@ Ext.define('MyApp.view.main.Main', {
         }
     },
 
-    items: [{
-        title: 'Home',
-        iconCls: 'fa-home',
-        // The following grid shares a store with the classic version's grid as well!
-        items: [{
-            xtype: 'mainlist'
-        }]
-    }, {
+    items: [ {
         title: 'Trees',
         iconCls: 'fa-tree',
         items: [{
             xtype: 'mainListTree'
         }]
-    }, {
+    },
+    //     {
+    //     title: 'Home',
+    //     iconCls: 'fa-home',
+    //     // The following grid shares a store with the classic version's grid as well!
+    //     items: [{
+    //         xtype: 'mainlist'
+    //     }]
+    // },
+        {
         title: 'Settings',
         iconCls: 'fa-cog',
         bind: {
