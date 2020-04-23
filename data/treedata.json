@@ -1,0 +1,41 @@
+{
+  "name": "Ext JS",
+  "size": 200,
+  "expanded": true,
+  "children": [
+    {
+      "name": "Root 1",
+      "size": 400,
+      "children": [
+        {
+          "name": "Root 3",
+          "size": 1200,
+          "children": [
+            {
+              "name": "Saratov",
+              "size": 12010,
+              "leaf": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Root 2",
+      "size": 20043,
+      "children": [
+        {
+          "name": "Root 4",
+          "size": 2232200,
+          "children": [
+            {
+              "name": "Arizona",
+              "size": 22300,
+              "leaf": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
