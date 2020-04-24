@@ -1,15 +1,10 @@
 {
-  "name": "Ext JS",
-  "size": 200,
-  "expanded": true,
   "children": [
     {
-      "name": "Root 1",
-      "size": 400,
+      "name": "Folder 1",
       "children": [
         {
-          "name": "Root 3",
-          "size": 1200,
+          "name": "Folder 3",
           "children": [
             {
               "name": "Saratov",
@@ -21,12 +16,10 @@
       ]
     },
     {
-      "name": "Root 2",
-      "size": 20043,
+      "name": "Folder 2",
       "children": [
         {
-          "name": "Root 4",
-          "size": 2232200,
+          "name": "Folder 4",
           "children": [
             {
               "name": "Arizona",

@@ -21,9 +21,7 @@ Ext.define('MyApp.view.main.Main', {
 
     controller: 'main',
     viewModel: 'main',
-
     ui: 'navigation',
-
     tabBarHeaderPosition: 1,
     titleRotation: 0,
     tabRotation: 0,
@@ -82,14 +80,6 @@ Ext.define('MyApp.view.main.Main', {
             xtype: 'mainListTree'
         }]
     },
-    //     {
-    //     title: 'Home',
-    //     iconCls: 'fa-home',
-    //     // The following grid shares a store with the classic version's grid as well!
-    //     items: [{
-    //         xtype: 'mainlist'
-    //     }]
-    // },
         {
         title: 'Settings',
         iconCls: 'fa-cog',

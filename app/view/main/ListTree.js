@@ -9,6 +9,7 @@ Ext.define('MyApp.view.main.ListTree', {
         'MyApp.store.TreeData'
     ],
     store:Ext.create('xu_tree_store'),
+    rootVisible: false,
     title: "My awesome directory tree named after Ksyshen'ka",
 
     columns: [{
@@ -26,7 +27,25 @@ Ext.define('MyApp.view.main.ListTree', {
         text: 'Size',
         dataIndex: 'size',
         flex: 1
-    }, {
+    },{
+        xtype: 'actioncolumn',
+        text: 'Add folder',
+        width: 100,
+        menuDisabled: true,
+        tooltip: 'Add folder',
+        align: 'center',
+        iconCls: 'x-fa fa-folder',
+        handler: 'onAddFolderAction'
+    },{
+        xtype: 'actioncolumn',
+        text: 'Add file',
+        width: 100,
+        menuDisabled: true,
+        tooltip: 'Add file',
+        align: 'center',
+        iconCls: 'x-fa fa-file',
+        handler: 'onAddFileAction'
+    },{
         xtype: 'actioncolumn',
         text: 'Edit',
         width: 55,
@@ -45,13 +64,7 @@ Ext.define('MyApp.view.main.ListTree', {
         iconCls: 'x-fa fa-times',
         handler: 'onDeleteRowAction'
     }],
-    tbar: {
-        reference: 'tbar',
-        items: [{
-            text: 'Add item',
-            handler: 'onAddItemAction'
-        }]
-    },
+
     viewConfig: {
         plugins: {
             treeviewdragdrop: {
